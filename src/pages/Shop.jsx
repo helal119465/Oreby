@@ -1,20 +1,18 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Container from '../component/layout/Container'
 import Breadcrum from '../component/Breadcrum'
 import Flex from '../component/layout/Flex'
 import SideBar from '../component/layout/SideBar'
 import Products from '../component/layout/Products'
-import BestSellersImg01 from '../assets/BestSellersImg01.png'
-import BestSellersImg02 from '../assets/BestSellersImg02.png'
-import BestSellersImg03 from '../assets/BestSellersImg03.png'
-import BestSellersImg04 from '../assets/BestSellersImg04.png'
 import { IoGridSharp,IoList } from "react-icons/io5";
 import Filter from '../component/layout/Filter'
 
 const Shop = () => {
   const [products,setProducts]=useState([])
-  fetch('https://dummyjson.com/products?limit=100')
+  useEffect(()=>{
+    fetch('https://dummyjson.com/products?limit=100')
     .then(res=>res.json()).then((data)=>setProducts(data.products))
+  },[])
   return (
     <section>
       <Container>
@@ -56,8 +54,7 @@ const Shop = () => {
                 ProductTitle={products.category}
                 Price={products.price}
               />
-                ))
-              }
+                ))}
             </Flex>
           </div>
         </Flex>
