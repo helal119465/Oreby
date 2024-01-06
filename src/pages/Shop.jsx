@@ -10,8 +10,11 @@ import Filter from '../component/layout/Filter'
 const Shop = () => {
   const [products,setProducts]=useState([])
   useEffect(()=>{
-    fetch('https://dummyjson.com/products?limit=100')
-    .then(res=>res.json()).then((data)=>setProducts(data.products))
+    const getData=async()=> { 
+      await fetch('https://dummyjson.com/products?limit=100')
+      .then(res=>res.json()).then((data)=>setProducts(data.products))
+    }
+    getData();
   },[])
   return (
     <section>

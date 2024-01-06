@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { GoTriangleDown,GoTriangleUp } from "react-icons/go";
 
-const SideBarContent = ({className,subDropDown,title,color,children}) => {
+const SideBarContent = ({className,subDropDown,title}) => {
     let [show,setShow] =useState(false)
   return (
     <section className={`font-dm ml-2  pt-2 text-[#767676] hover:text-slate-700 text-base hover:transition-all ${className}`}>
@@ -10,13 +10,13 @@ const SideBarContent = ({className,subDropDown,title,color,children}) => {
             {show?<GoTriangleDown />:<GoTriangleUp />}
         </div>):
         (<div className='flex capitalize border-b border-[#F0F0F0] pt-2 pb-1 hover:font-bold hover:transition-all'>
-            {color &&(
+            {/* {color &&(
                 
                 <span className='w-3 h-3 rounded-full mr-3 mt-2' style={{backgroundColor:`${color}`}}></span>
-            )}
+            )} */}
             <h6 className='pb-2'>{title}</h6>
         </div>)}
-        {show && children}
+        {/* {show && children} */}
     </section>
   )
 }
