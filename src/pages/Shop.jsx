@@ -6,6 +6,7 @@ import SideBar from '../component/layout/SideBar'
 import Products from '../component/layout/Products'
 import { IoGridSharp,IoList } from "react-icons/io5";
 import Filter from '../component/layout/Filter'
+import Pagination from '../component/layout/Pagination'
 
 const Shop = () => {
   const [products,setProducts]=useState([])
@@ -45,20 +46,8 @@ const Shop = () => {
                 </Filter>
               </Flex>
             </Flex>
-            
-            <Flex className={'flex-wrap gap-y-10 gap-x-6 justify-center'}>
-              {
-                products.map((products)=>(
-                <Products
-                className={'w-full sm:w-[47%] lg:w-[31.5%]'}
-                label={products.brand}
-                labelShow={true}
-                ProductImg={products.thumbnail}
-                ProductTitle={products.category}
-                Price={products.price}
-              />
-                ))}
-            </Flex>
+              
+            <Pagination itemsPerPage={12} data={products}/>
           </div>
         </Flex>
       </Container>
