@@ -3,11 +3,12 @@ import Img from './Img'
 import Flex from './Flex'
 import { FaHeart,FaShoppingCart } from "react-icons/fa";
 import { FaCodeCompare } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 
-const Products = ({className,labelShow,label,ProductImg,ProductTitle,Price,color}) => {
+const Products = ({className,labelShow,label,ProductImg,ProductTitle,Price,color,link}) => {
     let setLabelShow=labelShow
   return (
-    <div className={` font-d ${className} border-[1px]`}>
+    <Link to={link} className={` font-d ${className} border-[1px]`}>
         <div className='relative group overflow-hidden '>
           {setLabelShow && <div className='absolute top-2 left-3 bg-[#262626]  text-[#FFFFFF] text-sm font-bold py-2 px-4 capitalize '>{label}</div>}
             <Img src={ProductImg} imgClassName={"w-full lg:w-[382px] lg:h-[250px]"}/>
@@ -23,9 +24,8 @@ const Products = ({className,labelShow,label,ProductImg,ProductTitle,Price,color
             <h2 className='text-[#767676] text-base'>${Price}</h2>
           </Flex>
           <h2 className='text-[#767676] text-base'>{color}</h2>
-       </Flex>
-          
-    </div>
+       </Flex>   
+    </Link>
   )
 }
 

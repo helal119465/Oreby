@@ -9,7 +9,7 @@ import { FaFacebook,FaYoutube,FaLinkedin,FaGithub } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className='font-dm bg-[#F5F5F3] '>
+    <footer className='font-dm bg-[#F5F5F3] md:mt-32'>
       <Container>
         <Flex className={'pt-[55px] md:pb-[65px] pb-8  flex-wrap'}>
           <div className='xl:w-[180px] md:w-[110px] w-[80px]  font-bold h-[200]'>

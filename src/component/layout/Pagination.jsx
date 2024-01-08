@@ -7,17 +7,21 @@ const Pagination = ({itemsPerPage,data}) => {
 // Example items, to simulate fetching from another resources.
 const items = data;
 function Items({ currentItems }) {
+    console.log(data.id)
     return (
       <>
         {currentItems &&
           currentItems.map((products) => (
             <Products
+                key={products.id}
+                link={`/shop/${products.id}`}
                 className={'w-full sm:w-[47%] lg:w-[31.5%]'}
                 label={products.brand}
                 labelShow={true}
                 ProductImg={products.thumbnail}
                 ProductTitle={products.category}
                 Price={products.price}
+                // link={}
               />
           ))}
       </>

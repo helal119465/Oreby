@@ -80,7 +80,7 @@ const NewArrival = () => {
     ]
   };
   return (
-    <section className='md:mb-32'>
+    <section className=''>
        <Container>
         <Title title={"New Arrivals"}/>
           <Slider {...settings} className='gap-10 relative'>

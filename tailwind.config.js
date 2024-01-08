@@ -12,9 +12,6 @@ export default {
       fontFamily:{
         dm:[ 'DM Sans', 'sans-serif']
       },
-      fontFamily:{
-        Pop:[ 'Montserrat', 'inherit']
-      },
     },
   },
   plugins: [],

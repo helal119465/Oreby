@@ -3,7 +3,6 @@ import Container from '../component/layout/Container'
 import Breadcrum from '../component/Breadcrum'
 import Flex from '../component/layout/Flex'
 import SideBar from '../component/layout/SideBar'
-import Products from '../component/layout/Products'
 import { IoGridSharp,IoList } from "react-icons/io5";
 import Filter from '../component/layout/Filter'
 import Pagination from '../component/layout/Pagination'
