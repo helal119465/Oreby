@@ -1,11 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-const Button = ({title,className,linkClassName}) => {
+const Button = ({title,className,linkClassName,link}) => {
   return (
     <div className={`${className}`}>
-        <a href="" className={`${linkClassName}`}>
+        <Link to={link}  className={`${linkClassName}`}>
             {title}
-        </a>
+        </Link >
     </div>
   )
 }
