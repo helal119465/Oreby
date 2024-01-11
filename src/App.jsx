@@ -1,7 +1,7 @@
-import Home from "./pages/Home"
+import RootLayout from "./component/layout/RootLayout";
 import "slick-carousel/slick/slick.css"; 
 import { createBrowserRouter,createRoutesFromElements,RouterProvider,Route } from "react-router-dom";
-import RootLayout from "./component/layout/RootLayout";
+import Home from "./pages/Home"
 import Shop from "./pages/Shop";
 import About from "./pages/About";
 import Contact from "./pages/Contact";

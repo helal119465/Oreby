@@ -7,6 +7,9 @@ import Img from '../component/layout/Img'
 import { IoMdAdd,IoMdRemove } from "react-icons/io";
 import ReactStars from "react-rating-stars-component";
 import { MdStar,MdStarOutline,MdStarHalf } from "react-icons/md";
+import { useDispatch } from 'react-redux'
+import { addToCartFun } from '../app/Slices/addToCart'
+
 
 const SingleProduct = () => {
   let [loading,setLoading] = useState(true)
@@ -15,16 +18,22 @@ const SingleProduct = () => {
   let [shippingShow,setShppingShow]=useState(false)
   let [show,setShow] =useState(true)
   const [product,setProduct]=useState([])
+  let dispatch=useDispatch()
 
   useEffect(()=>{
     const getData=async()=> { 
       await fetch(`https://dummyjson.com/products/${productId}`)
-      .then(res=>res.json()).then((data)=>setProduct(data))
+      .then(res=>res.json())
+      .then((data)=>setProduct(data))
       .finally(() => setLoading(false));
     }
     getData();
   },[])
   
+  const handleAddToCart=()=>{
+    dispatch(addToCartFun({...product,quantity:1}))
+  }
+
   const handleFetures=()=>{
     setFeturesShow(!feturesShow)
   }
@@ -96,7 +105,7 @@ const SingleProduct = () => {
           </Flex>
           <Flex className={'w-full text-base  py-4 border-b-[1px] border-[#F0F0F0] gap-x-4'}>
             <button className='text-[#262626] bg-[#FFFFFF] hover:bg-[#b6b6b6] w-[200px] h-[50px] text-center border border-[#262626] transition-all duration-75'>Add to Wish List</button>
-            <button className='text-[#FFFFFF] bg-slate-800 hover:bg-[#000000] w-[200px] h-[50px] text-center  border border-[#262626] transition-all duration-75'>Add to Cart</button>
+            <button className='text-[#FFFFFF] bg-slate-800 hover:bg-[#000000] w-[200px] h-[50px] text-center  border border-[#262626] transition-all duration-75'  onClick={handleAddToCart}>Add to Cart</button>
           </Flex>
           <div className='py-4 border-b-[1px]  border-[#F0F0F0]'>
             <h5 className='capitalize flex items-center justify-between ' onClick={handleFetures}>FEATURES  & DETAILS <span className='text-2xl font-bold'>{feturesShow?<IoMdRemove />:<IoMdAdd />}</span> </h5>
