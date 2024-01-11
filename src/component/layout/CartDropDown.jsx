@@ -37,8 +37,8 @@ const CartDropDown = () => {
           <div className='bg-[#FFFFFF] p-5'>
               <h5 className='text-[#767676] text-base'>Subtotal: <span className='text-[#262626] text-base font-bold'>$44.00</span></h5>
               <Flex className={'mt-3'}>
-                <Button title={"View Cart"} className={' text-[#262626] text-sm font-bold py-4 px-10 border border-[#2B2B2B]'}/>
-                <Button title={"Checkout"} className={' text-[#FFFFFF] bg-[#262626] text-sm font-bold py-4 px-10 ml-5'}/>
+                <Button title={"View Cart"} className={' text-[#262626] text-sm font-bold py-4 px-10 border border-[#2B2B2B] hover:bg-indigo-950 hover:text-white transition-all duration-500'} link={'/cart'}/>
+                <Button title={"Checkout"} className={' text-[#FFFFFF] bg-[#262626] text-sm font-bold py-4 px-10 ml-5 hover:text-slate-500 hover:bg-lime-300 transition-all duration-500'}/>
               </Flex>
           </div>
         </DropDownItem>
