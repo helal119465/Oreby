@@ -3,7 +3,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import DropDownItem from './DropDownItem';
 import Flex from './Flex';
 import Img from './Img';
-import Cart from '../../assets/Cart.png'
+import CartImg from '../../assets/CartImg.png'
 import { ImCross } from "react-icons/im";
 import Button from './Button';
 
@@ -26,7 +26,7 @@ const CartDropDown = () => {
           show && <DropDownItem className={'bg-[#F5F5F3] absolute w-[360px] top-10 right-0 border border-[#F0F0F0] font-dm'}>
           <div className='p-5  '>
             <Flex className={' items-center justify-end'}>
-              <Img src={Cart} className={'w-20'}/>
+              <Img src={CartImg} className={'w-20'}/>
               <div className='text-sm font-bold w-32 ml-5'>
                 <h3 className='mb-3'>Black Smart Watch</h3>
                 <h4>$44.00</h4>

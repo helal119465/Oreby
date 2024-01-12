@@ -3,7 +3,6 @@ import Breadcrum from './Breadcrum'
 import Flex from './layout/Flex'
 import Container from './layout/Container'
 import { ImCross } from "react-icons/im";
-import CartImg from '../assets/CartImg.png'
 import Img from './layout/Img';
 import { FiPlus,FiMinus } from "react-icons/fi";
 import Button from './layout/Button';
@@ -11,7 +10,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { quantityMinus, quantityUpdate, removeToCart } from '../app/Slices/addToCart';
 const Cart = () => {
   let dispatch=useDispatch()
+
   const cartData=useSelector((state)=>state.addtocart.cartData)
+
   let [total,setTotal]=useState(0)
   useEffect(()=>{
     let totalPrice=0;
@@ -21,10 +22,10 @@ const Cart = () => {
     setTotal(totalPrice)
   },[cartData])
   return (
-    <section className=' my-10'>
+    <section className=' my-10 font-dm'>
       <Container>
         <Breadcrum title={"Cart"}
-          linkVal={'shop'} link={'/'}
+          linkVal={'shop'} link={'/shop'}
           currentPage={window.location.pathname.split('/')[1]} currentPageLink={'/cart'}
         />
         <Flex className={'mt-12 flex-col gap-y-3 text-[#262626]  font-bold'}>
@@ -76,13 +77,13 @@ const Cart = () => {
         </div>
         <Flex className={'w-[644px] ml-auto items-center text-[#767676] text-base font-bold flex-wrap mt-6'}>
           <h1 className='w-1/2 border py-3 pl-4'>Subtotal</h1>
-          <h1 className='w-1/2 border border-l-0 py py-3 pl-4 text-[#262626]'>{total}$</h1>
+          <h1 className='w-1/2 border border-l-0 py-3 pl-4 text-[#262626]'>{total}$</h1>
           <h1 className='w-1/2 border py-3 pl-4'>Total</h1>
-          <h1 className='w-1/2 border border-l-0 py py-3 pl-4 text-[#262626]'>{total}$</h1>
+          <h1 className='w-1/2 border border-l-0 py-3 pl-4 text-[#262626]'>{total}$</h1>
         </Flex>
         <div className=' text-right mt-8'>
           <Button title={'Proceed to Checkout'}
-           link={'/checkout'} 
+           link={'/checkOut'} 
            className={'bg-[#262626] text-white inline-block py-4 px-6 text-base font-bold rounded-md hover:bg-slate-950 transition-all'}/> 
         </div>
       </Container>
