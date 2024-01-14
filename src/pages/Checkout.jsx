@@ -5,7 +5,6 @@ import Flex from '../component/layout/Flex'
 import Input from '../component/layout/Input'
 import Title from '../component/layout/Title'
 import { useSelector } from 'react-redux'
-import Button from '../component/layout/Button'
 
 const Checkout = () => {
     let [couponShow,setCouponShow] = useState(false)
@@ -21,6 +20,55 @@ const Checkout = () => {
         })
         setTotal(totalPrice)
     },[cartData])
+
+    let [inputValues,setInputValues]=useState({
+        fName:'',
+        lName:'',
+        country:'',
+        address:'',
+        townCity:'',
+        postCode:'',
+        phone:'',
+        email:''
+    })
+    let [errors,setErrors]=useState({})
+   
+    const handleInputs=(e)=>{
+        let {name,value}=e.target
+        setInputValues({...inputValues,[name]:value})
+        setErrors({...inputValues,[name]:""})
+    }
+    const handleCheckOut=(e)=>{
+        e.preventDefault()
+        const validationErrors={}
+        if(!inputValues.fName.trim()){
+            validationErrors.fName="First name is Required!!"
+        }
+        if(!inputValues.lName.trim()){
+            validationErrors.lName="Last name is Required!!"
+        }
+        if(!inputValues.country.trim()){
+            validationErrors.country="Country name is Required!!"
+        }
+        if(!inputValues.address.trim()){
+            validationErrors.address="Address is Required!!"
+        }
+        if(!inputValues.townCity.trim()){
+            validationErrors.townCity="Town/City name is Please!!"
+        }
+        if(!inputValues.postCode.trim()){
+            validationErrors.postCode="Enter the Post Code!!"
+        }
+        if(!inputValues.phone.trim()){
+            validationErrors.phone="Enter the Phone number!!"
+        }
+        if(!inputValues.email.trim()){
+            validationErrors.email="Please enter valid Email!!"
+        }
+
+        setErrors(validationErrors)
+        
+    }
   return (
     <section className='font-dm'>
         <Container>
@@ -34,67 +82,109 @@ const Checkout = () => {
                   <span className='text-[#262626] cursor-pointer underline font-semibold italic'
                    onClick={handleCoupon}> Click here to enter your code</span>
                 </h5>
-                {couponShow && <div className='w-[330px] py-10 bg-emerald-500 rounded-sm'>
+                {couponShow && <div className='w-[350px] py-10 bg-emerald-500 rounded-sm'>
                     <input type="text" className='bg-gray-200  ml-4 py-1 rounded-sm outline-none'/>
                     <button className='text-sm text-white ml-4 bg-slate-800 p-2 rounded-md hover:bg-indigo-800 transition-colors'>Apply Coupon</button>
                 </div>}
             </Flex>
             <Title title={'Billing Details'}/>
-            <Flex></Flex>
+            <form onSubmit={handleCheckOut}>
             <Flex className={' justify-between'}>
-                <Input
-                 className={'w-[48%]'} 
-                 label={"First Name *"}
-                 type={"text"}
-                 placeholder={"first Name"}
-                />
-                 <Input
-                 className={'w-[48%]'} 
-                 label={"Last Name *"}
-                 type={"text"}
-                 placeholder={"last Name"}
-                />
+                <div className='w-[48%]'>
+                    <Input
+                      label={"First Name *"}
+                      type={"text"}
+                      placeholder={"first Name"}
+                      value={inputValues.fName}
+                      onChange={handleInputs}
+                      name={"fName"}
+                      
+                    />
+                    <p className='text-red-800' >{errors.fName}</p>
+                </div>
+                <div className='w-[48%]'>
+                    <Input
+                      label={"Last Name *"}
+                      type={"text"}
+                      placeholder={"last Name"}
+                      value={inputValues.lName}
+                      onChange={handleInputs}
+                      name={"lName"}
+                    />
+                    <p className='text-red-800' >{errors.lName}</p>
+                </div>
             </Flex>
             <Input 
               label={'Companye Name (optional)'}
               type={'text'}
               placeholder={'Company Name'}
             />
+            <div>
             <Input
               label={'Country *'}
               type={'text'}
-              placeholder={'Country'} 
+              placeholder={'Country'}
+              value={inputValues.country}
+              onChange={handleInputs}
+              name={"country"}
             />
+            <p className='text-red-800' >{errors.country}</p>
+            </div>
+            <div>
             <Input
               label={'Street Address *'}
               type={'text'}
               placeholder={'House number and street name'}
-            />
+              value={inputValues.address}
+              onChange={handleInputs}
+              name={'address'}
+              />
+              <p className='text-red-800' >{errors.address}</p>
+            </div>
+            <div>
             <Input
               label={'Town/City *'}
               type={'text'}
               placeholder={'Town/City'}
-            />
+              value={inputValues.townCity}
+              onChange={handleInputs}
+              name={'townCity'}
+              />
+              <p className='text-red-800' >{errors.townCity}</p>
+            </div>
+            <div>
             <Input
               label={'Post Code *'}
               type={'number'}
               placeholder={'Post Code'}
-            />
+              value={inputValues.postCode}
+              onChange={handleInputs}
+              name={'postCode'}
+              />
+              <p className='text-red-800' >{errors.postCode}</p>
+            </div>
+            <div>
             <Input
               label={'Phone *'}
               type={'tel'}
               placeholder={'Phone'}
-            />
+              value={inputValues.phone}
+              onChange={handleInputs}
+              name={'phone'}
+              />
+              <p className='text-red-800' >{errors.phone}</p>
+            </div>
+            <div>
             <Input
               label={'Email Address *'}
               type={'email'}
               placeholder={'Email'}
-            />
-            <Input
-              label={"Password"}
-              type={'password'}
-              placeholder={'password'}
-            />
+              value={inputValues.email}
+              onChange={handleInputs}
+              name={'email'}
+              />
+            <p className='text-red-800' >{errors.email}</p>
+            </div>
             <Flex className={'flex-col'}>
                 <Title title={'Additional Information'}/>
                 <div>
@@ -113,9 +203,12 @@ const Checkout = () => {
                 <h1 className='w-1/2 border border-l-0 py-3 pl-4 font-normal'>${total}</h1>
             </Flex>
             <div className='mt-16'>
-                <Button title={'Proceed to Bank'}
-                className={'bg-[#262626] text-white inline-block py-4 px-6 text-base font-bold rounded-md hover:bg-slate-950 transition-all'}/> 
+                <button className={'bg-[#262626] text-white inline-block py-4 px-6 text-base font-bold rounded-md hover:bg-slate-950 transition-all'} 
+                 type='submit'>
+                    Proceed to Bank
+                </button>
             </div>
+            </form>
         </Container>
     </section>
   )
