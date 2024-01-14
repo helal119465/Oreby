@@ -8,7 +8,7 @@ import ListItem from "./layout/ListItem";
 import { FaBars } from "react-icons/fa";
 
 const Navbar = () => {
-  let [manuShow, setManuShow] = useState(true);
+  let [manuShow, setManuShow] = useState(false);
   useEffect(() => {
     const resize = () => {
       if (window.innerWidth < 641) {
@@ -20,12 +20,11 @@ const Navbar = () => {
     window.addEventListener("resize", resize);
     resize();
   }, []);
-  console.log(window.innerWidth);
   return (
     <nav className="font-dm border-y-2 border-[#F5F5F3] px-2 py-4">
       <Container className={"sm:flex justify-between "}>
-        <Flex className={"items-center self-auto relative"}>
-          <Img src={Logo} className={" w-full"} />
+        <Flex className={"items-center relative"}>
+          <Img src={Logo} className={"w-full"} />
           <FaBars
             className="sm:hidden cursor-pointer absolute right-0"
             onClick={() => setManuShow(!manuShow)}
@@ -36,7 +35,7 @@ const Navbar = () => {
           {manuShow && (
             <List
               className={
-                " sm:w-[90%] w-full flex justify-center gap-x-10 mt-4 sm:mt-0 sm:text-[#767676] text-cyan-300 text-lg flex-col sm:flex-row bg-slate-800 sm:bg-transparent text-center font-semibold"
+                "sm:w-[90%] w-full flex justify-center gap-x-10 mt-4 sm:mt-0 sm:text-[#767676] text-cyan-300 text-lg flex-col sm:flex-row bg-slate-800 sm:bg-transparent text-center font-semibold"
               }
             >
               <ListItem
