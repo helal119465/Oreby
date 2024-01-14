@@ -8,6 +8,7 @@ import ListItem from "./layout/ListItem";
 import { FaBars } from "react-icons/fa";
 
 const Navbar = () => {
+  const activeLink = "text-blue-700 font-bold";
   let [manuShow, setManuShow] = useState(false);
   useEffect(() => {
     const resize = () => {
@@ -41,35 +42,40 @@ const Navbar = () => {
               <ListItem
                 item={"Home"}
                 link={"/"}
-                linkClassName={
+                activeClass={"sm:text-[#262626] text-blue-700 underline"}
+                className={
                   "sm:hover:text-[#262626] hover:text-cyan-600 transition-all sm:py-0 py-4 block sm:border-none border-b border-[#767676]"
                 }
               />
               <ListItem
                 item={"Shop"}
                 link={"/shop"}
-                linkClassName={
+                activeClass={"sm:text-[#262626] text-blue-700 underline"}
+                className={
                   "sm:hover:text-[#262626] hover:text-cyan-600 transition-all sm:py-0 py-4 block sm:border-none border-b border-[#767676]"
                 }
               />
               <ListItem
                 item={"About"}
                 link={"/about"}
-                linkClassName={
+                activeClass={"sm:text-[#262626] text-blue-700 underline"}
+                className={
                   "sm:hover:text-[#262626] hover:text-cyan-600 transition-all sm:py-0 py-4 block sm:border-none border-b border-[#767676]"
                 }
               />
               <ListItem
                 item={"Contacts"}
                 link={"/contacts"}
-                linkClassName={
+                activeClass={"sm:text-[#262626] text-blue-700 underline"}
+                className={
                   "sm:hover:text-[#262626] hover:text-cyan-600 transition-all sm:py-0 py-4 block sm:border-none border-b border-[#767676]"
                 }
               />
               <ListItem
                 item={"Journal"}
                 link={"/journal"}
-                linkClassName={
+                activeClass={"sm:text-[#262626] text-blue-700 underline"}
+                className={
                   "sm:hover:text-[#262626] hover:text-cyan-600 transition-all sm:py-0 py-4 block sm:border-none border-b border-[#767676]"
                 }
               />

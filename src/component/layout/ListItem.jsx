@@ -1,12 +1,17 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { NavLink } from "react-router-dom";
 
-const ListItem = ({className,linkClassName,item,link}) => {
+const ListItem = ({ className, activeClass, item, link }) => {
   return (
     <li className={`${className}`}>
-        <Link to={link} className={` ${linkClassName}`}>{item}</Link >
+      <NavLink
+        to={link}
+        className={({ isActive }) => (isActive ? `${activeClass}` : "")}
+      >
+        {item}
+      </NavLink>
     </li>
-  )
-}
+  );
+};
 
-export default ListItem
+export default ListItem;
