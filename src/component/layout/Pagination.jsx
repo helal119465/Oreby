@@ -7,6 +7,7 @@ const Pagination = ({ itemsPerPage, data }) => {
   // Example items, to simulate fetching from another resources.
   const items = data;
   function Items({ currentItems }) {
+    console.log(data.id);
     return (
       <>
         {currentItems &&
@@ -14,7 +15,7 @@ const Pagination = ({ itemsPerPage, data }) => {
             <Products
               key={products.id}
               link={`/shop/${products.id}`}
-              className={"w-full sm:w-[47%] lg:w-[30.5%]"}
+              className={"w-full sm:w-[47%] lg:w-[31.5%]"}
               label={products.brand}
               labelShow={true}
               ProductImg={products.thumbnail}
@@ -50,7 +51,9 @@ const Pagination = ({ itemsPerPage, data }) => {
 
   return (
     <>
-      <Flex className={"flex-wrap gap-y-10 gap-x-6 justify-center mb-12"}>
+      <Flex
+        className={"flex-wrap gap-y-10 xl:gap-x-6 gap-4 justify-center mb-12"}
+      >
         <Items currentItems={currentItems} />
       </Flex>
       <Flex
@@ -59,7 +62,7 @@ const Pagination = ({ itemsPerPage, data }) => {
         }
       >
         <ReactPaginate
-          className="flex gap-x-5"
+          className="flex flex-wrap sm:gap-x-5 gap-x-1 gap-y-6 sm:gap-y-0"
           pageLinkClassName="border-[1px] border-[#F0F0F0] hover:border-gray-800 font-semibold py-2 px-4 duration-500"
           activeLinkClassName="bg-black text-white"
           breakLabel="..."

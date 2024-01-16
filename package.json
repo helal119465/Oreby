@@ -17,6 +17,7 @@
     "react-paginate": "^8.2.0",
     "react-rating-stars-component": "^2.2.0",
     "react-redux": "^9.0.4",
+    "react-responsive-pagination": "^2.4.1",
     "react-router-dom": "^6.21.1",
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1"
