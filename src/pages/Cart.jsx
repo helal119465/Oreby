@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import Breadcrum from "./Breadcrum";
-import Flex from "./layout/Flex";
-import Container from "./layout/Container";
+import Breadcrum from "../component/Breadcrum";
+import Flex from "../component/layout/Flex";
+import Container from "../component/layout/Container";
 import { ImCross } from "react-icons/im";
-import Img from "./layout/Img";
+import Img from "../component/layout/Img";
 import { FiPlus, FiMinus } from "react-icons/fi";
-import Button from "./layout/Button";
+import Button from "../component/layout/Button";
 import { useDispatch, useSelector } from "react-redux";
 import {
   quantityMinus,
