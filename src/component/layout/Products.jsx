@@ -2,7 +2,7 @@ import React from "react";
 import Img from "./Img";
 import Flex from "./Flex";
 import { FaHeart, FaShoppingCart } from "react-icons/fa";
-import { FaCodeCompare } from "react-icons/fa6";
+import { BiSolidDetail } from "react-icons/bi";
 import { Link } from "react-router-dom";
 
 const Products = ({
@@ -14,6 +14,7 @@ const Products = ({
   Price,
   color,
   link,
+  imgLink,
 }) => {
   let setLabelShow = labelShow;
   return (
@@ -27,21 +28,21 @@ const Products = ({
         <Img
           src={ProductImg}
           imgClassName={
-            "xl:w-[382px] xl:h-[220px] md:w-[350px] md:h-[180px] w-full h-80 "
+            "xl:w-[382px] xl:h-[220px] md:w-[350px] md:h-[180px] w-full h-80"
           }
         />
-        <div className=" bg-white w-full -bottom-80 absolute   capitalize text-right py-4 pr-[30px] text-[#767676] transition-all group-hover:bottom-0 duration-700 border-b-[1px] border-x-gray-400">
-          <h6 className="hover:text-[#262626] cursor-pointer">
-            Add to Wish List{" "}
-            <FaHeart className="inline-block text-[#262626] ml-3" />
+        <div className=" bg-white w-full -bottom-80 absolute text-base capitalize text-right py-4 pr-[30px] text-[#767676] transition-all group-hover:bottom-0 duration-700 border-b-[1px] border-x-gray-400">
+          <h6 className="hover:text-[#262626] hover:font-bold transition-all duration-200 cursor-pointer">
+            Add to Wish List
+            <FaHeart className="inline-block hover:text-[#262626] ml-3" />
           </h6>
-          <h6 className="hover:text-[#262626] cursor-pointer py-2">
-            Compare{" "}
-            <FaCodeCompare className="inline-block text-[#262626] ml-3" />
+          <h6 className="hover:text-[#262626] hover:font-bold transition-all duration-200 cursor-pointer py-2">
+            View Detail
+            <BiSolidDetail className="inline-block text-xl hover:text-[#262626] ml-3" />
           </h6>
-          <h6 className="hover:text-[#262626] cursor-pointer">
-            Add to Cart{" "}
-            <FaShoppingCart className="inline-block text-[#262626] ml-3" />
+          <h6 className="hover:text-[#262626] hover:font-bold transition-all duration-200 cursor-pointer">
+            Add to Cart
+            <FaShoppingCart className="inline-block hover:text-[#262626] ml-3" />
           </h6>
         </div>
       </div>

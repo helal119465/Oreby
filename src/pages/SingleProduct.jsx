@@ -88,7 +88,9 @@ const SingleProduct = () => {
           </Flex>
         )}
         <Flex
-          className={"flex-col w-[780px] text-base font-bold text-zinc-800"}
+          className={
+            "flex-col lg:w-[780px] w-full text-base font-bold text-zinc-800"
+          }
         >
           <h5 className="text-[39px] font-bold my-8">{product.title}</h5>
           <Flex className={"w-full py-4 border-b-[1px] border-[#F0F0F0]"}>
@@ -127,13 +129,14 @@ const SingleProduct = () => {
               <p className="w-5 h-5 rounded-full bg-red-500"></p>
             </div>
           </Flex>
-          <Flex className={"w-full py-4 border-b-[1px] border-[#F0F0F0]"}>
+          {/* <Flex className={"w-full py-4 border-b-[1px] border-[#F0F0F0]"}>
             <h5 className="capitalize">QUANTITY:</h5>
             <input
               type="number"
+              value={console.log(product)}
               className="ml-8 w-[140px] h-9 text-center border border-[#767676] outline-none"
             />
-          </Flex>
+          </Flex> */}
           <Flex className={"w-full py-4 border-b-[1px] border-[#F0F0F0]"}>
             <h5 className="capitalize">Status:</h5>
             <span className="text-[#767676] ml-16 font-medium">
@@ -142,22 +145,22 @@ const SingleProduct = () => {
           </Flex>
           <Flex
             className={
-              "w-full text-base  py-4 border-b-[1px] border-[#F0F0F0] gap-x-4"
+              "w-full flex-col sm:flex-row text-base  py-4 border-b-[1px] border-[#F0F0F0] sm:gap-x-4 gap-y-5 sm:gap-y-0 "
             }
           >
-            <button className="text-[#262626] bg-[#FFFFFF] hover:bg-[#b6b6b6] w-[200px] h-[50px] text-center border border-[#262626] transition-all duration-75">
+            <button className="text-[#262626] bg-[#FFFFFF] hover:bg-[#b6b6b6] sm:w-[200px] w-full sm:h-[50px] h-[70px] text-xl sm:text-center border border-[#262626] transition-all duration-75">
               Add to Wish List
             </button>
             <button
-              className="text-[#FFFFFF] bg-slate-800 hover:bg-[#000000] w-[200px] h-[50px] text-center  border border-[#262626] transition-all duration-75"
+              className="text-[#FFFFFF] bg-slate-800 hover:bg-[#000000] sm:w-[200px] w-full sm:h-[50px] h-[70px] text-xl sm:text-center border border-[#262626] transition-all duration-75"
               onClick={handleAddToCart}
             >
               Add to Cart
             </button>
           </Flex>
-          <div className="py-4 border-b-[1px]  border-[#F0F0F0]">
+          <div className="py-4 border-b-[1px] border-[#F0F0F0]">
             <h5
-              className="capitalize flex items-center justify-between "
+              className="capitalize flex items-center justify-between cursor-pointer"
               onClick={handleFetures}
             >
               FEATURES & DETAILS{" "}
@@ -166,7 +169,7 @@ const SingleProduct = () => {
               </span>{" "}
             </h5>
             {feturesShow && (
-              <p className="text-[#767676] text-base font-normal  ">
+              <p className="text-[#767676] text-base font-normal text-justify">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                 Explicabo possimus omnis quod laborum tempora dolores obcaecati,
                 itaque totam vitae numquam voluptatum modi, quaerat veniam
@@ -180,7 +183,7 @@ const SingleProduct = () => {
 
           <div className="py-4 border-b-[1px] border-[#F0F0F0]">
             <h5
-              className="capitalize flex items-center justify-between"
+              className="capitalize flex items-center justify-between cursor-pointer"
               onClick={handleShipping}
             >
               SHIPPING & RETURNS{" "}
@@ -189,7 +192,7 @@ const SingleProduct = () => {
               </span>{" "}
             </h5>
             {shippingShow && (
-              <p className="text-[#767676] text-base font-normal ">
+              <p className="text-[#767676] text-base font-normal text-justify">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                 Explicabo possimus omnis quod laborum tempora dolores obcaecati,
                 itaque totam vitae numquam voluptatum modi, quaerat veniam
@@ -201,14 +204,14 @@ const SingleProduct = () => {
             )}
           </div>
         </Flex>
-        <Flex className={"mt-20 flex-col"}>
+        <Flex className={"my-20 flex-col"}>
           <div className="flex items-center">
             <h5
               className={`${
                 show
                   ? "text-[#262626] text-xl font-bold"
                   : "text-[#767676] text-xl font-normal"
-              } w-[15%] cursor-pointer`}
+              } md:w-[15%] w-1/2 cursor-pointer`}
               onClick={handleDescription}
             >
               Description
@@ -218,14 +221,14 @@ const SingleProduct = () => {
                 show
                   ? "text-[#767676] text-xl font-normal"
                   : "text-[#262626] text-xl font-bold"
-              } w-[85%] cursor-pointer`}
+              } md:w-[15%] w-1/2 cursor-pointer`}
               onClick={handleReviewsn}
             >
               Reviews
             </h5>
           </div>
           {show ? (
-            <p className=" pt-9">
+            <p className=" pt-9 text-justify">
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
               accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
               quae ab illo inventore veritatis et quasi architecto beatae vitae
@@ -264,7 +267,7 @@ const SingleProduct = () => {
                   </h5>
                   <h5 className="text-[#767676]">6 months</h5>
                 </Flex>
-                <p className="text-[#767676] text-sm">
+                <p className="text-[#767676] text-sm text-justify">
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry's
                   standard dummy text ever since the 1500s, when an unknown
@@ -285,7 +288,7 @@ const SingleProduct = () => {
                 </label>
                 <input
                   type="text"
-                  className="outline-none pt-[10px] pb-4 border-b border-[#F0F0F0] w-1/2"
+                  className="outline-none pt-[10px] pb-4 border-b border-[#F0F0F0] w-full md:w-1/2"
                   placeholder="Your name here"
                 />
               </div>
@@ -295,7 +298,7 @@ const SingleProduct = () => {
                 </label>
                 <input
                   type="email"
-                  className="outline-none pt-[10px] pb-4 border-b border-[#F0F0F0] w-1/2"
+                  className="outline-none pt-[10px] pb-4 border-b border-[#F0F0F0] w-full md:w-1/2"
                   placeholder="helal@2024gmail.com"
                 />
               </div>
@@ -305,7 +308,7 @@ const SingleProduct = () => {
                 </label>
                 <input
                   type="text"
-                  className="outline-none pt-[10px] pb-4 border-b border-[#F0F0F0] w-1/2"
+                  className="outline-none pt-[10px] pb-4 border-b border-[#F0F0F0] w-full md:w-1/2"
                   placeholder="Your review here"
                 />
               </div>

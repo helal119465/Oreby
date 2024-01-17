@@ -21,7 +21,6 @@ const Pagination = ({ itemsPerPage, data }) => {
               ProductImg={products.thumbnail}
               ProductTitle={products.category}
               Price={products.price}
-              // link={}
             />
           ))}
       </>
@@ -52,7 +51,7 @@ const Pagination = ({ itemsPerPage, data }) => {
   return (
     <>
       <Flex
-        className={"flex-wrap gap-y-10 xl:gap-x-6 gap-4 justify-center mb-12"}
+        className={"flex-wrap gap-y-10 xl:gap-x-6 gap-3 justify-center mb-12"}
       >
         <Items currentItems={currentItems} />
       </Flex>
