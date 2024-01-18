@@ -13,7 +13,6 @@ const About = () => {
           linkVal={"home"}
           link={"/"}
           currentPage={window.location.pathname.split("/")[1]}
-          currentPageLink={"/about"}
         />
         <div className="mt-20">
           <p className="text-[#262626] md:text-3xl text-xl text-justify">

@@ -13,6 +13,7 @@ import Contact from "./pages/Contact";
 import SingleProduct from "./pages/SingleProduct";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
+import Login from "./pages/Login";
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -24,6 +25,7 @@ function App() {
         <Route path="/shop/:productId" element={<SingleProduct />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkOut" element={<Checkout />} />
+        <Route path="/login" element={<Login />} />
       </Route>
     )
   );
