@@ -27,7 +27,7 @@ const Login = () => {
   return (
     <section>
       <Container className={"mt-20"}>
-        <form className="sm:w-[550px] w-full h-auto m-auto ">
+        <form className="sm:w-[550px] w-full h-auto m-auto border p-5 sm:shadow-lg rounded-md">
           <div className="p-4">
             <h1 className="border-b border-[#262626] text-[#262626] font-dm md:text-[39px] text-3xl font-bold inline-block">
               Login

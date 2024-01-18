@@ -27,13 +27,14 @@ const UserDropDown = () => {
             <ListItem
               item={"My Account"}
               className={
-                "bg-[#2B2B2B] hover:bg-[#262626] text-[#FFFFFF] text-sm text-center hover:font-bold py-4"
+                "bg-[#262626] text-gray-400 hover:text-[#ffffff] text-sm text-center font-bold py-4 transition-all"
               }
+              link={"/signUp"}
             />
             <ListItem
               item={"Log Out"}
               className={
-                "bg-[#FFFFFF] hover:bg-gray-200 text-[#262626] text-sm hover:font-bold text-center py-4 border border-[#F0F0F0] transition-all"
+                "bg-[#FFFFFF] text-[#797979] hover:text-[#262626] text-sm font-bold text-center py-4 border border-[#dbdbdb] transition-all"
               }
               link={"/login"}
             />
