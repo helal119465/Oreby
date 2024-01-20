@@ -96,8 +96,8 @@ const Signup = () => {
         />
         <Title title={"Create your account"} />
         <form>
-          <Flex className={"justify-between"}>
-            <div className="w-[48%]">
+          <Flex className={"justify-between md:flex-row flex-col"}>
+            <div className="md:w-[48%] w-full">
               <Input
                 label={"First Name"}
                 placeholder={"first name"}
@@ -112,7 +112,7 @@ const Signup = () => {
                 </p>
               )}
             </div>
-            <div className="w-[48%]">
+            <div className="md:w-[48%] w-full">
               <Input
                 label={"Last Name"}
                 placeholder={"last name"}
@@ -128,8 +128,8 @@ const Signup = () => {
               )}
             </div>
           </Flex>
-          <Flex className={"justify-between"}>
-            <div className="w-[48%]">
+          <Flex className={"justify-between md:flex-row flex-col"}>
+            <div className="md:w-[48%] w-full">
               <Input
                 label={"Email Address"}
                 placeholder={"helal@gmail.com"}
@@ -144,7 +144,7 @@ const Signup = () => {
                 </p>
               )}
             </div>
-            <div className="w-[48%]">
+            <div className="md:w-[48%] w-full">
               <Input
                 label={"Phone"}
                 placeholder={"Your phone number"}
@@ -160,8 +160,8 @@ const Signup = () => {
               )}
             </div>
           </Flex>
-          <Flex className={"justify-between"}>
-            <div className="w-[48%]">
+          <Flex className={"justify-between md:flex-row flex-col"}>
+            <div className="md:w-[48%] w-full">
               <Input
                 label={"Present Address"}
                 placeholder={"raod-02 house-#B212"}
@@ -176,7 +176,7 @@ const Signup = () => {
                 </p>
               )}
             </div>
-            <div className="w-[48%]">
+            <div className="md:w-[48%] w-full">
               <Input
                 label={"Permanent Address"}
                 placeholder={"4279 Zboncak Port Suite 6212"}
@@ -192,8 +192,8 @@ const Signup = () => {
               )}
             </div>
           </Flex>
-          <Flex className={"justify-between"}>
-            <div className="w-[48%] mt-6 ml-2">
+          <Flex className={"justify-between md:flex-row flex-col"}>
+            <div className="md:w-[48%] w-full mt-6 ml-2">
               <h1 className="text-base font-bold">Division</h1>
               <select className=" w-full block text-sm pt-2 pb-3 border-b-2 border-[#F0F0F0] outline-none">
                 <option className="text-[#767676]">Please select</option>
@@ -207,7 +207,7 @@ const Signup = () => {
                 <option>Sylhet</option>
               </select>
             </div>
-            <div className="w-[48%] mt-6 ml-2">
+            <div className="md:w-[48%] w-full mt-6 ml-2">
               <h1 className="text-base font-bold">District</h1>
               <select className=" w-full block text-sm pt-2 pb-3 border-b-2 border-[#F0F0F0] outline-none">
                 <option className="text-[#767676]">Please select</option>
@@ -229,8 +229,8 @@ const Signup = () => {
               </select>
             </div>
           </Flex>
-          <Flex className={"justify-between"}>
-            <div className="w-[48%]">
+          <Flex className={"justify-between md:flex-row flex-col"}>
+            <div className="md:w-[48%] w-full">
               <Input
                 label={"Password"}
                 type={"password"}
@@ -245,7 +245,7 @@ const Signup = () => {
                 </p>
               )}
             </div>
-            <div className="w-[48%]">
+            <div className="md:w-[48%] w-full">
               <Input
                 label={"Confirm Password"}
                 type={"password"}

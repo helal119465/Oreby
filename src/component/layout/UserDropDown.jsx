@@ -32,7 +32,7 @@ const UserDropDown = () => {
               link={"/signUp"}
             />
             <ListItem
-              item={"Log Out"}
+              item={"Login"}
               className={
                 "bg-[#FFFFFF] text-[#797979] hover:text-[#262626] text-sm font-bold text-center py-4 border border-[#dbdbdb] transition-all"
               }
