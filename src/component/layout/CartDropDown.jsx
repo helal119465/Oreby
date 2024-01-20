@@ -6,8 +6,12 @@ import Img from "./Img";
 import CartImg from "../../assets/CartImg.png";
 import { ImCross } from "react-icons/im";
 import Button from "./Button";
+import { useSelector } from "react-redux";
 
 const CartDropDown = () => {
+  const totalCartData = useSelector((state) => {
+    return state.addtocart.cartData.length;
+  });
   let [show, setShow] = useState(false);
   let cart = useRef();
   useEffect(() => {
@@ -20,8 +24,11 @@ const CartDropDown = () => {
     });
   });
   return (
-    <div className=" relative z-20" ref={cart}>
-      <FaShoppingCart className="text-xl cursor-pointer" />
+    <div className=" z-20 relative" ref={cart}>
+      <FaShoppingCart className="text-xl cursor-pointer " />
+      <span className="ml-2 px-[7px] py-[2px] -mt-1 bg-black text-white rounded-full text-xs block">
+        {totalCartData}
+      </span>
       {show && (
         <DropDownItem
           className={
