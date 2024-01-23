@@ -129,14 +129,7 @@ const SingleProduct = () => {
               <p className="w-5 h-5 rounded-full bg-red-500"></p>
             </div>
           </Flex>
-          {/* <Flex className={"w-full py-4 border-b-[1px] border-[#F0F0F0]"}>
-            <h5 className="capitalize">QUANTITY:</h5>
-            <input
-              type="number"
-              value={console.log(product)}
-              className="ml-8 w-[140px] h-9 text-center border border-[#767676] outline-none"
-            />
-          </Flex> */}
+
           <Flex className={"w-full py-4 border-b-[1px] border-[#F0F0F0]"}>
             <h5 className="capitalize">Status:</h5>
             <span className="text-[#767676] ml-16 font-medium">
