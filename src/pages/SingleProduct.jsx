@@ -28,7 +28,6 @@ const SingleProduct = () => {
     };
     getData();
   }, []);
-
   const handleAddToCart = () => {
     dispatch(addToCartFun({ ...product, quantity: 1 }));
   };

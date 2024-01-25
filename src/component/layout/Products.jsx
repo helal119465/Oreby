@@ -18,19 +18,21 @@ const Products = ({
 }) => {
   let setLabelShow = labelShow;
   return (
-    <Link to={link} className={` font-dm ${className} border-[1px]`}>
+    <Link className={` font-dm ${className} border-[1px]`}>
       <div className="relative group overflow-hidden ">
         {setLabelShow && (
           <div className="absolute top-2 left-3 bg-[#262626] text-[#FFFFFF] text-sm font-bold py-2 px-4 capitalize ">
             {label}
           </div>
         )}
-        <Img
-          src={ProductImg}
-          imgClassName={
-            "xl:w-[382px] xl:h-[220px] md:w-[350px] md:h-[180px] w-full h-80"
-          }
-        />
+        <Link to={imgLink}>
+          <Img
+            src={ProductImg}
+            imgClassName={
+              "xl:w-[382px] xl:h-[220px] md:w-[350px] md:h-[180px] w-full h-80"
+            }
+          />
+        </Link>
         <div className=" bg-white w-full -bottom-80 absolute text-base capitalize text-right py-4 pr-[30px] text-[#767676] transition-all group-hover:bottom-0 duration-700 border-b-[1px] border-x-gray-400">
           <h6 className="hover:text-[#262626] hover:font-bold transition-all duration-200 cursor-pointer">
             Add to Wish List

@@ -15,6 +15,7 @@ import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Products from "./component/layout/Products";
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -24,6 +25,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contacts" element={<Contact />} />
         <Route path="/shop/:productId" element={<SingleProduct />} />
+        <Route path="/shop/:userId" element={<Products />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkOut" element={<Checkout />} />
         <Route path="/login" element={<Login />} />
